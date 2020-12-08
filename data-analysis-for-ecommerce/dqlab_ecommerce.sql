@@ -18,7 +18,7 @@ SELECT count(1) AS jumlah_transaksi FROM orders WHERE paid_at = 'NA';
 --transaksi sudah dibayar tapi tidak dikirim
 SELECT count(1) AS jumlah_transaksi FROM orders WHERE paid_at != 'NA' AND delivery_at = 'NA';
 
---transaksi tidakd dikirim, baik yang sudah dibayar maupun belum
+--transaksi tidak dikirim, baik yang sudah dibayar maupun belum
 SELECT count(1) AS jumlah_transaksi FROM orders WHERE delivery_at = 'NA' AND (paid_at != 'NA' OR paid_at = 'NA');
 
 --transaksi dikirim pada hari yang sama dengan tanggal dibayar
