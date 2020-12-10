@@ -114,21 +114,21 @@ FROM
 		jumlah_order,
 		month_count
 	FROM
-	(
-		SELECT
-			buyer_id,
-			round(avg(total),2) AS rata_rata
-		FROM
-			orders
-		WHERE     
-			DATE_FORMAT(created_at, '%Y') = '2020'
-		GROUP BY
-			1
-		HAVING
-			rata_rata > 1000000
-		ORDER BY
-			1
-	) AS trx
+		(
+			SELECT
+				buyer_id,
+				round(avg(total),2) AS rata_rata
+			FROM
+				orders
+			WHERE     
+				DATE_FORMAT(created_at, '%Y') = '2020'
+			GROUP BY
+				1
+			HAVING
+				rata_rata > 1000000
+			ORDER BY
+				1
+		) AS trx
 	JOIN
 		(
 			SELECT
