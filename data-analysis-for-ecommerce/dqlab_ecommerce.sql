@@ -35,7 +35,7 @@ SELECT count(DISTINCT buyer_id) FROM orders;
 --total pengguna yang pernah bertransaksi sebagai penjual
 SELECT count(DISTINCT seller_id) FROM orders;
 
---total penggua yang pernah bertransaksi sebagai pembeli dan pernah sebagai penjual
+--total pengguna yang pernah bertransaksi sebagai pembeli dan pernah sebagai penjual
 SELECT count(DISTINCT seller_id) FROM orders WHERE seller_id IN (SELECT buyer_id FROM orders);
 
 --total pengguna yang tidak pernah bertransaksi sebagai pembeli maupun penjual
